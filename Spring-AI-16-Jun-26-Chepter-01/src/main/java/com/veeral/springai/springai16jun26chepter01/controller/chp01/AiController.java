@@ -1,7 +1,7 @@
-package com.veeral.springai.springai16jun26chepter01.controller;
+package com.veeral.springai.springai16jun26chepter01.controller.chp01;
 
-import com.veeral.springai.springai16jun26chepter01.dto.PromptRequest;
-import com.veeral.springai.springai16jun26chepter01.dto.PromptResponse;
+import com.veeral.springai.springai16jun26chepter01.dto.comm.reqres.PromptRequest;
+import com.veeral.springai.springai16jun26chepter01.dto.comm.reqres.PromptResponse;
 import jakarta.validation.Valid;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,4 +1,4 @@
-package com.veeral.springai.springai16jun26chepter01.config;
+package com.veeral.springai.springai16jun26chepter01.config.chp01;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;

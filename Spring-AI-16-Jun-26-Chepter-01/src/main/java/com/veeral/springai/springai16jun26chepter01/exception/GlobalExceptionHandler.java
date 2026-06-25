@@ -1,6 +1,6 @@
 package com.veeral.springai.springai16jun26chepter01.exception;
 
-import com.veeral.springai.springai16jun26chepter01.dto.ErrorResponse;
+import com.veeral.springai.springai16jun26chepter01.dto.comm.reqres.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

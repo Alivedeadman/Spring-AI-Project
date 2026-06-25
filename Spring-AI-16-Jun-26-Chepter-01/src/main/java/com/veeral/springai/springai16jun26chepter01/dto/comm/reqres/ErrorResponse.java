@@ -1,6 +1,7 @@
-package com.veeral.springai.springai16jun26chepter01.dto;
+package com.veeral.springai.springai16jun26chepter01.dto.comm.reqres;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 
 public class ErrorResponse {
@@ -18,7 +19,7 @@ public class ErrorResponse {
         this.status = status;
         this.message = message;
         this.error = error;
-        this.timestamp = LocalDateTime.now();
+        this.timestamp = LocalDateTime.now(ZoneId.systemDefault());
         this.details = details;
     }
 
