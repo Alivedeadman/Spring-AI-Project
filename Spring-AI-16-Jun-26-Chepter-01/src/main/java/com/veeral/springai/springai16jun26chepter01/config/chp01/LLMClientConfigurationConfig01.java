@@ -7,9 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class LLMClientConfigurationConfig {
+public class LLMClientConfigurationConfig01 {
 
-    //Chapter 01
     @Bean
     public ChatClient googleChatClient(@Qualifier("googleGenAiChatModel") ChatModel googleChatModel) {
         return ChatClient.builder(googleChatModel).build();
@@ -17,17 +16,6 @@ public class LLMClientConfigurationConfig {
 
     @Bean
     public ChatClient groqChatClient(@Qualifier("openAiChatModel") ChatModel groqChatModel) {
-        return ChatClient.builder(groqChatModel).build();
-    }
-
-    //Chapter 02
-    @Bean("googleChatClientWithDefaultSystemAndUserMessage")
-    public ChatClient googleChatClientWithDefaultSystemAndUserMessageClient(@Qualifier("googleGenAiChatModel") ChatModel googleChatModel) {
-        return ChatClient.builder(googleChatModel).build();
-    }
-
-    @Bean("groqChatClientWithDefaultSystemAndUserMessage")
-    public ChatClient groqChatClientWithDefaultSystemAndUserMessageClient(@Qualifier("openAiChatModel") ChatModel groqChatModel) {
         return ChatClient.builder(groqChatModel).build();
     }
 
