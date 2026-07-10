@@ -23,37 +23,26 @@ public class StructuredOutPutController {
     private final ChatClient googleChatClient;
 
 
-    public StructuredOutPutController(
-            @Qualifier("googleChatClient") ChatClient googleChatClient) {
-
+    public StructuredOutPutController(@Qualifier("googleChatClient") ChatClient googleChatClient) {
         this.googleChatClient = googleChatClient;
 
     }
 
     @GetMapping("/bean")
     public ResponseEntity<CountryCities> chatBean(@RequestParam("message") String message) {
-        CountryCities countryCities = googleChatClient
-                .prompt()
-                .user(message)
-                .call().entity(CountryCities.class);
+        CountryCities countryCities = googleChatClient.prompt().user(message).call().entity(CountryCities.class);
         return ResponseEntity.ok(countryCities);
     }
 
     @GetMapping("/list")
     public ResponseEntity<List<String>> chatList(@RequestParam("message") String message) {
-        List<String> countryCities = googleChatClient
-                .prompt()
-                .user(message)
-                .call().entity(new ListOutputConverter());
+        List<String> countryCities = googleChatClient.prompt().user(message).call().entity(new ListOutputConverter());
         return ResponseEntity.ok(countryCities);
     }
 
     @GetMapping("/map")
     public ResponseEntity<Map<String, Object>> chatMap(@RequestParam("message") String message) {
-        Map<String, Object> countryCities = googleChatClient
-                .prompt()
-                .user(message)
-                .call().entity(new MapOutputConverter());
+        Map<String, Object> countryCities = googleChatClient.prompt().user(message).call().entity(new MapOutputConverter());
         return ResponseEntity.ok(countryCities);
     }
 
@@ -62,7 +51,8 @@ public class StructuredOutPutController {
         List<CountryCities> countryCities = googleChatClient
                 .prompt()
                 .user(message)
-                .call().entity(new ParameterizedTypeReference<List<CountryCities>>() {
+                .call()
+                .entity(new ParameterizedTypeReference<List<CountryCities>>() {
                 });
         return ResponseEntity.ok(countryCities);
     }
