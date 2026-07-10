@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.veeral.springai</groupId>
-    <artifactId>Spring-AI-16-Jun-26-Chepter-01</artifactId>
+    <artifactId>Spring-AI-16-Jun-26-Chapter-01</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Spring-AI-16-Jun-26-Chepter-01</name>
     <description>Spring-AI-16-Jun-26-Chepter-01</description>
