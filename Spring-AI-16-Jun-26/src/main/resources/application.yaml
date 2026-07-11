@@ -28,3 +28,6 @@ logging:
             client:
               advisor: debug
 
+app:
+  crop-health:
+    max-attachments: 2
