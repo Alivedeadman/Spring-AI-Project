@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: Crop Health API
+  description: API for analyzing crop health using multiple AI providers concurrently.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+paths:
+  /api/v1/crop-health/analyze:
+    post:
+      summary: Analyze Crop Health
+      description: Analyzes a description and one or more crop images to identify potential diseases using multiple AI models.
+      operationId: analyzeCropHealth
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  description: Optional text description of the crop and its symptoms.
+                images:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: Array of crop images to analyze (Max default is 2).
+              required:
+                - images
+      responses:
+        '200':
+          description: Successful analysis
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CropHealthResponse'
+        '400':
+          description: Bad Request (e.g., missing attachments, empty files, or exceeded attachment limit)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '413':
+          description: Payload Too Large (e.g., uploaded file size exceeds maximum server limits)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error (e.g., AI provider failures)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    CropHealthResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          description: A list of analysis results from different AI providers.
+          items:
+            $ref: '#/components/schemas/AiProviderResult'
+
+    AiProviderResult:
+      type: object
+      properties:
+        providerName:
+          type: string
+          description: Name of the AI provider (e.g., Google GenAI, Groq).
+          example: Google GenAI
+        identifiedDisease:
+          type: string
+          description: The potential disease identified by the model.
+          example: Tomato Blight
+        confidenceLevel:
+          type: integer
+          description: Confidence level of the diagnosis (0-100).
+          example: 85
+        recommendations:
+          type: string
+          description: Recommended actions or treatments.
+          example: Apply copper-based fungicide.
+
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: HTTP status code.
+          example: 400
+        message:
+          type: string
+          description: General error message.
+          example: Invalid argument
+        error:
+          type: string
+          description: Error type.
+          example: BAD_REQUEST
+        timestamp:
+          type: string
+          format: date-time
+          description: Time the error occurred.
+          example: 2026-07-11T12:00:00Z
+        details:
+          type: array
+          description: Specific details about the errors.
+          items:
+            type: string
+          example: [ "Maximum number of allowed attachments is 2." ]
