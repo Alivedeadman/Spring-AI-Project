@@ -1,4 +1,4 @@
-package com.veeral.springai.springai16jun26.dto.comm.reqres;
+package com.veeral.springai.springai16jun26.model.reqres;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

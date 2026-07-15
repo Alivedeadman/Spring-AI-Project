@@ -1,6 +1,6 @@
 package com.veeral.springai.springai16jun26.controller.chatmemory;
 
-import com.veeral.springai.springai16jun26.dto.comm.reqres.PromptResponse;
+import com.veeral.springai.springai16jun26.model.reqres.PromptResponse;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.beans.factory.annotation.Qualifier;

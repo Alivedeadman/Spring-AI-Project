@@ -1,7 +1,7 @@
 package com.veeral.springai.springai16jun26.controller.chp02;
 
 
-import com.veeral.springai.springai16jun26.dto.comm.model.CountryCities;
+import com.veeral.springai.springai16jun26.model.CountryCities;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.converter.ListOutputConverter;
 import org.springframework.ai.converter.MapOutputConverter;

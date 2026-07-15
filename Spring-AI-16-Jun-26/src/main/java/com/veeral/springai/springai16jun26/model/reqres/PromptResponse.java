@@ -1,6 +1,7 @@
-package com.veeral.springai.springai16jun26.dto.comm.reqres;
+package com.veeral.springai.springai16jun26.model.reqres;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 public class PromptResponse {
 
@@ -16,7 +17,7 @@ public class PromptResponse {
         this.response = response;
         this.provider = provider;
         this.httpStatus = httpStatus;
-        this.timestamp = LocalDateTime.now();
+        this.timestamp = LocalDateTime.now(ZoneId.systemDefault());
     }
 
     public String getResponse() {

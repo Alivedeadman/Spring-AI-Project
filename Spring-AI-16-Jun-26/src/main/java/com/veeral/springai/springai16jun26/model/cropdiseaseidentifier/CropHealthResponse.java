@@ -1,4 +1,4 @@
-package com.veeral.springai.springai16jun26.dto.cropdiseaseidentifier;
+package com.veeral.springai.springai16jun26.model.cropdiseaseidentifier;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.veeral.springai.springai16jun26.exception;
 
-import com.veeral.springai.springai16jun26.dto.comm.reqres.ErrorResponse;
+import com.veeral.springai.springai16jun26.model.reqres.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -15,6 +15,7 @@ import java.util.List;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    private static final String BAD_REQUEST = "BAD_REQUEST";
     /**
      * Handle validation errors for @Valid annotation
      */
@@ -28,7 +29,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
             HttpStatus.BAD_REQUEST.value(),
             "Validation failed",
-            "BAD_REQUEST",
+                BAD_REQUEST,
             errors
         );
         
@@ -64,7 +65,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
             HttpStatus.BAD_REQUEST.value(),
             "Invalid argument",
-            "BAD_REQUEST",
+                BAD_REQUEST,
             errors
         );
         
@@ -100,7 +101,7 @@ public class GlobalExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 "Required request part is missing",
-                "BAD_REQUEST",
+                BAD_REQUEST,
                 errors
         );
 

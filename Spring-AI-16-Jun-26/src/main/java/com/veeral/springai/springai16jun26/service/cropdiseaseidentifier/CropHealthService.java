@@ -1,6 +1,6 @@
 package com.veeral.springai.springai16jun26.service.cropdiseaseidentifier;
 
-import com.veeral.springai.springai16jun26.dto.cropdiseaseidentifier.CropHealthResponse;
+import com.veeral.springai.springai16jun26.model.cropdiseaseidentifier.CropHealthResponse;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

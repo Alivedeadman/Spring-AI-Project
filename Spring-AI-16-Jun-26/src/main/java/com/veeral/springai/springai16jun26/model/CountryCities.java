@@ -1,4 +1,4 @@
-package com.veeral.springai.springai16jun26.dto.comm.model;
+package com.veeral.springai.springai16jun26.model;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.veeral.springai.springai16jun26.controller.cropdiseaseidentifier;
 
-import com.veeral.springai.springai16jun26.dto.cropdiseaseidentifier.CropHealthResponse;
+import com.veeral.springai.springai16jun26.model.cropdiseaseidentifier.CropHealthResponse;
 import com.veeral.springai.springai16jun26.service.cropdiseaseidentifier.CropHealthService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

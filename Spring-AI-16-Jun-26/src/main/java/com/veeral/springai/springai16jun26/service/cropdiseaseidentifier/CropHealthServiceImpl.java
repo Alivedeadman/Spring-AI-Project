@@ -1,7 +1,7 @@
 package com.veeral.springai.springai16jun26.service.cropdiseaseidentifier;
 
-import com.veeral.springai.springai16jun26.dto.cropdiseaseidentifier.AiProviderResult;
-import com.veeral.springai.springai16jun26.dto.cropdiseaseidentifier.CropHealthResponse;
+import com.veeral.springai.springai16jun26.model.cropdiseaseidentifier.AiProviderResult;
+import com.veeral.springai.springai16jun26.model.cropdiseaseidentifier.CropHealthResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
