@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class LLMClientConfigurationConfig02 {
+public class LLMChatClientConfig02 {
 
     @Bean("googleChatClientWithDefaultSystemAndUserMessage")
     public ChatClient googleChatClientWithDefaultSystemAndUserMessageClient(@Qualifier("googleGenAiChatModel") ChatModel googleChatModel) {
