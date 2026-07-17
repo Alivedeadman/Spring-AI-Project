@@ -41,4 +41,11 @@ public class ChatMemoryController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/gr/jdbc")
+    public ResponseEntity<PromptResponse> testChatMemoryJDBCGroq(@RequestParam(defaultValue = "Tell me a joke about Python") String prompt, @RequestParam(name = "conid", defaultValue = "default") String conId) {
+        String content = groqChatClient.prompt().user(prompt).advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, conId)).call().content();
+        PromptResponse response = new PromptResponse(content, "Groq (OpenAI)", HttpStatus.OK.value());
+        return ResponseEntity.ok(response);
+    }
+
 }
